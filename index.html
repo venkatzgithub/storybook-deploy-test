@@ -14,4 +14,26 @@
   } catch (e) {
     // eslint-disable-next-line no-console
     console.warn('unable to connect to parent frame for connecting dev tools');
-  }</script></head><body><div id="root"></div><script src="runtime~main.17c79cf0abbfa7c4c085.bundle.js"></script><script src="vendors~main.07224bc96a4319075ecf.bundle.js"></script><script src="main.e8c309d795c298570481.bundle.js"></script></body></html>
+  }</script></head><body><div id="root"></div>
+      <script>
+        var username = prompt("Enter username");
+        var password = prompt("Enter password");
+        window["CONFIG_TYPE"] = "PRODUCTION";
+
+        window["LOGLEVEL"] = "info";
+
+        window["DOCS_MODE"] = false;
+        function loadScript(src) {
+          var s = document.createElement("script");
+          s.src = src + "?" + new Date().getTime();
+          s.type = "text/javascript";
+          s.async = false;
+          document.getElementsByTagName("head")[0].appendChild(s);
+        }
+        if (username == "sym" && password == "fastfastfast") {
+          loadScript("runtime~main.17c79cf0abbfa7c4c085.bundle.js");
+          loadScript("vendors~main.07224bc96a4319075ecf.bundle.js");
+          loadScript("main.e8c309d795c298570481.bundle.js");
+        }
+      </script>
+  <!-- <script src="runtime~main.17c79cf0abbfa7c4c085.bundle.js"></script><script src="vendors~main.07224bc96a4319075ecf.bundle.js"></script><script src="main.e8c309d795c298570481.bundle.js"></script></body></html> -->
